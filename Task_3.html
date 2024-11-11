@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animation Example with CSS and JavaScript">
+    <title>Animation Example</title>
+    <style>
+        body {
+            /* Corrected from 'bod' to 'body' */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px;
+        }
+
+        /* Animated Box */
+        .box {
+            /* Corrected from 'box' to '.box' to select the class */
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            position: relative;
+            transition: all 1s ease;
+            /* Smooth transition */
+        }
+
+        /* Keyframes for Animation */
+        @keyframes moveAndScale {
+
+            /* Added '@' before 'keyframes' */
+            0% {
+                transform: translateX(0) scale(1);
+                background-color: #3498db;
+                /* Added '#' to the color */
+            }
+
+            50% {
+                /* Changed '0%' to '50%' for the second keyframe */
+                transform: translateX(200px) scale(1.5);
+                background-color: #e74c3c;
+                /* Added '#' to the color */
+            }
+
+            100% {
+                /* Changed '0%' to '100%' for the third keyframe */
+                transform: translateX(0) scale(1);
+                background-color: #2ecc71;
+                /* Added '#' to the color */
+            }
+        }
+
+        /* Buttons styling */
+        button {
+            /* Corrected from '&button' to 'button' */
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            /* Added '#' to the color */
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            /* Corrected from '*button:hover' to 'button:hover' */
+            background-color: #27ae60;
+            /* Added '#' to the color */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS and JavaScript Animation Example</h1>
+
+    <!-- Animated Box -->
+    <div class="box" id="animatedBox"></div>
+
+    <!-- Control Buttons -->
+    <div>
+        <button onclick="startAnimation()">Start Animation</button> <!-- Corrected 'Aimation' to 'Animation' -->
+        <button onclick="stopAnimation()">Stop Animation</button> <!-- Corrected 'stopanimation' to 'stopAnimation' -->
+        <button onclick="resetAnimation()">Reset</button> <!-- Corrected 'resetanimation' to 'resetAnimation' -->
+    </div>
+
+    <script>
+        // JavaScript to control animation
+
+        // Function to start the animation
+        function startAnimation() {
+            let box = document.getElementById('animatedBox'); // Corrected 'documentgetElementById' to 'document.getElementById'
+            box.style.animation = 'moveAndScale 3s infinite'; // Corrected the comment and closing quote
+        }
+
+        // Function to stop the animation
+        function stopAnimation() {
+            let box = document.getElementById('animatedBox'); // Corrected the closing quote
+            box.style.animation = ''; // Corrected 'styleanimation' to 'style.animation'
+        }
+
+        // Function to reset the animation to its original state
+        function resetAnimation() {
+            let box = document.getElementById('animatedBox');
+            box.style.transform = 'translateX(0) scale(1)';
+            box.style.backgroundColor = '#3498db'; // Corrected the syntax and added '#' to the color
+        }
+    </script>
+</body>
+
+</html>
